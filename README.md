@@ -4,7 +4,17 @@
 This is a review management app.<br/>
 Share your impressions about a book, movie or game. See other people's reviews. Find a new perspective on your favorite topics.<br/>
 
-# Mock up 
+# Mock up
+header, <br/>
+article for each review,<br/>
+aside for search panel, <br/>
+input for Title, Tag, Rate, <br/>
+select for Group,<br/>
+button for Go, Your account, Log out,<br/>
+img for images, <br/>
+h5 for Review Title, <br/>
+label for Rate, group, tags, 
+pre for Description,<br/> 
 ![](mockup.png)<br/>
 
 # Project functions 
