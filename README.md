@@ -13,7 +13,7 @@ select for Group,<br/>
 button for Go, Your account, Log out,<br/>
 img for images, <br/>
 h5 for Review Title, <br/>
-label for Rate, group, tags, 
+label for Rate, group, tags, <br/>
 pre for Description,<br/> 
 ![](mockup.png)<br/>
 
