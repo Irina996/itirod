@@ -1,0 +1,13 @@
+.search-panel {
+    border: 1px solid black;
+    width: 110px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    float: left;
+}
+@media (max-width: 500px) {
+    .search-panel {
+        float: unset;
+    }
+}

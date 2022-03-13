@@ -1,0 +1,10 @@
+.review-list {
+    width: calc(100% - 175px);
+    float: right;
+}
+@media (max-width: 500px) {
+    .review-list {
+        width: 100%;
+        float: unset;
+    }
+}

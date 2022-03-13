@@ -1,0 +1,11 @@
+.header {
+    color: black;
+    height: 70px;
+    background-color: #1492AE;
+    padding: 10px;
+}
+@media (max-width: 500px) {
+    .header {
+        height: 120px;
+    }
+}

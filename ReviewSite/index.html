@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ReviewControl</title>
+    <link href="body/body.css" rel="stylesheet" type="text/css">
+    <link href="header/header.css" rel="stylesheet" type="text/css">
+    <link href="header/__title/header__tittle.css" rel="stylesheet" type="text/css">
+    <link href="header/__button/header__button.css" rel="stylesheet" type="text/css">
+    <link href="search-panel/search-panel.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="search-panel/__label/search-panel__label.css">
+    <link rel="stylesheet" href="search-panel/__input/search-panel__input.css">
+    <link rel="stylesheet" href="search-panel/__select/search-panel__select.css">
+    <link rel="stylesheet" href="search-panel/__button/search-panel__button.css">
+    <link rel="stylesheet" href="review/review.css">
+    <link rel="stylesheet" href="review/__title/review__title.css">
+    <link rel="stylesheet" href="review/__label/review__label.css">
+    <link rel="stylesheet" href="review-list/review-list.css">
+    <link rel="stylesheet" href="review/__description/__description.css">
+    <link rel="stylesheet" href="review/__image/review__image.css">
+</head>
+<body class="body">
+<header class="header">
+    <label class="header__title">Review Control</label>
+    <button class="header__button">Log out</button>
+    <button class="header__button">Your account</button>
+</header>
+<aside class="search-panel">
+    <label class="search-panel__label">Search</label>
+    <input class="search-panel__input" placeholder="Title"/>
+    <select class="search-panel__select">
+        <option>Book</option>
+        <option>Film</option>
+        <option>Game</option>
+    </select>
+    <input class="search-panel__input" placeholder="Tag"/>
+    <input class="search-panel__input" placeholder="Rate"/>
+    <button class="search-panel__button">Go</button>
+</aside>
+<article class="review-list">
+    <article class="review">
+        <h5 class="review__title">ReviewTitle</h5>
+        <label class="review__label">Rate</label>
+        <label class="review__label">Group</label>
+        <label class="review__label">Tags</label>
+        <pre class="review__description">This is a description. It’s explain opinion of user about book/film/game.</pre>
+        <img class="review__image" src="default-image.jpg" alt="Review Image">
+    </article>
+    <article class="review">
+        <h5 class="review__title">ReviewTitle</h5>
+        <label class="review__label">Rate</label>
+        <label class="review__label">Group</label>
+        <label class="review__label">Tags</label>
+        <pre class="review__description">This is
+            a description. It’s explain opinion of user about book/film/game.</pre>
+        <img class="review__image" src="default-image.jpg" alt="Review Image">
+    </article>
+    <article class="review">
+        <h5 class="review__title">ReviewTitle</h5>
+        <label class="review__label">Rate</label>
+        <label class="review__label">Group</label>
+        <label class="review__label">Tags</label>
+        <pre class="review__description">This is a description. It’s explain opinion of user about book/film/game.</pre>
+        <img class="review__image" src="default-image.jpg" alt="Review Image">
+    </article>
+</article>
+</body>
+</html>
