@@ -1,8 +1,8 @@
-.search-panel__button {
+.main-form__button {
     border: 0.01rem solid black;
     margin-top: 1rem;
     margin-bottom: 1rem;
     background-color: #1492AE;
-    width: 4rem;
+    width: 7rem;
     font-size: 1.5rem;
 }

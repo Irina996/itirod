@@ -16,52 +16,69 @@
     <link rel="stylesheet" href="review/__title/review__title.css">
     <link rel="stylesheet" href="review/__label/review__label.css">
     <link rel="stylesheet" href="review-list/review-list.css">
-    <link rel="stylesheet" href="review/__description/__description.css">
+    <link rel="stylesheet" href="review/__description/review__description.css">
     <link rel="stylesheet" href="review/__image/review__image.css">
+    <link rel="stylesheet" href="elements-group/elements-group.css">
+    <link rel="stylesheet" href="main-content/main-content.css">
+    <link rel="stylesheet" href="form/form.css">
 </head>
 <body class="body">
 <header class="header">
-    <label class="header__title">Review Control</label>
-    <button class="header__button">Log out</button>
-    <button class="header__button">Your account</button>
+    <label class="header__title">REVIEW CONTROL</label>
+    <div class="elements-group">
+        <form action="user-account.html" class="form">
+            <button type="submit" class="header__button">Your account</button>
+        </form>
+        <form action="logout.html" class="form">
+            <button type="submit" class="header__button">Log out</button>
+        </form>
+    </div>
 </header>
-<aside class="search-panel">
-    <label class="search-panel__label">Search</label>
-    <input class="search-panel__input" placeholder="Title"/>
-    <select class="search-panel__select">
-        <option>Book</option>
-        <option>Film</option>
-        <option>Game</option>
-    </select>
-    <input class="search-panel__input" placeholder="Tag"/>
-    <input class="search-panel__input" placeholder="Rate"/>
-    <button class="search-panel__button">Go</button>
-</aside>
-<article class="review-list">
-    <article class="review">
-        <h5 class="review__title">ReviewTitle</h5>
-        <label class="review__label">Rate</label>
-        <label class="review__label">Group</label>
-        <label class="review__label">Tags</label>
-        <pre class="review__description">This is a description. It’s explain opinion of user about book/film/game.</pre>
-        <img class="review__image" src="default-image.jpg" alt="Review Image">
-    </article>
-    <article class="review">
-        <h5 class="review__title">ReviewTitle</h5>
-        <label class="review__label">Rate</label>
-        <label class="review__label">Group</label>
-        <label class="review__label">Tags</label>
-        <pre class="review__description">This is
+<article class="main-content">
+    <aside class="search-panel">
+        <label class="search-panel__label">Search</label>
+        <input class="search-panel__input" placeholder="Title"/>
+        <select class="search-panel__select">
+            <option>Book</option>
+            <option>Film</option>
+            <option>Game</option>
+        </select>
+        <input class="search-panel__input" placeholder="Tag"/>
+        <input class="search-panel__input" placeholder="Rate"/>
+        <button class="search-panel__button">Go</button>
+    </aside>
+    <article class="review-list">
+        <article class="review">
+            <div class="elements-group">
+                <label class="review__title">ReviewTitle</label>
+                <label class="review__label">Rate</label>
+                <label class="review__label">Group</label>
+                <label class="review__label">Tags</label>
+                <pre class="review__description">This is a description. It’s explain opinion of user about book/film/game.</pre>
+            </div>
+            <img class="review__image" src="image.png" alt="Review Image">
+        </article>
+        <article class="review">
+            <div class="elements-group">
+                <label class="review__title">ReviewTitle</label>
+                <label class="review__label">Rate</label>
+                <label class="review__label">Group</label>
+                <label class="review__label">Tags</label>
+                <pre class="review__description">This is
             a description. It’s explain opinion of user about book/film/game.</pre>
-        <img class="review__image" src="default-image.jpg" alt="Review Image">
-    </article>
-    <article class="review">
-        <h5 class="review__title">ReviewTitle</h5>
-        <label class="review__label">Rate</label>
-        <label class="review__label">Group</label>
-        <label class="review__label">Tags</label>
-        <pre class="review__description">This is a description. It’s explain opinion of user about book/film/game.</pre>
-        <img class="review__image" src="default-image.jpg" alt="Review Image">
+            </div>
+            <img class="review__image" src="image.png" alt="Review Image">
+        </article>
+        <article class="review">
+            <div class="elements-group">
+                <label class="review__title">ReviewTitle</label>
+                <label class="review__label">Rate</label>
+                <label class="review__label">Group</label>
+                <label class="review__label">Tags</label>
+                <pre class="review__description">This is a description. It’s explain opinion of user about book/film/game.</pre>
+            </div>
+            <img class="review__image" src="image.png" alt="Review Image">
+        </article>
     </article>
 </article>
 </body>

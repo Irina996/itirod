@@ -1,13 +1,8 @@
 .search-panel {
-    border: 1px solid black;
-    width: 110px;
-    padding: 20px;
-    margin: 10px;
+    border: 0.01rem solid black;
+    width: min-content;
+    height: min-content;
+    padding: 1.5rem;
+    margin: 0.7rem;
     text-align: center;
-    float: left;
-}
-@media (max-width: 500px) {
-    .search-panel {
-        float: unset;
-    }
 }

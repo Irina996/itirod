@@ -1,6 +1,6 @@
 .review__description {
-    margin: 10px;
-    width: 40%;
+    margin: 0.7rem;
+    width: 45vw;
     white-space: normal;
     overflow: auto;
 }

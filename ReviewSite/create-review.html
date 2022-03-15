@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create review</title>
+    <link href="body/body.css" rel="stylesheet" type="text/css">
+    <link href="header/header.css" rel="stylesheet" type="text/css">
+    <link href="header/__title/header__tittle.css" rel="stylesheet" type="text/css">
+    <link href="header/__button/header__button.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="main-form/main-form.css">
+    <link rel="stylesheet" href="main-form/__button/main-form__button.css">
+    <link rel="stylesheet" href="main-form/__input/main-form__input.css">
+    <link rel="stylesheet" href="main-form/__select/main-form__select.css">
+    <link rel="stylesheet" href="main-form/__textarea/main-form__textarea.css">
+    <link rel="stylesheet" href="main-form/__title/main-form__title.css">
+    <link rel="stylesheet" href="form/form.css">
+</head>
+<body class="body">
+<header class="header">
+    <label class="header__title">REVIEW CONTROL</label>
+    <div class="elements-group">
+        <form action="user-account.html" class="form">
+            <button type="submit" class="header__button">Your account</button>
+        </form>
+        <form action="logout.html" class="form">
+            <button type="submit" class="header__button">Log out</button>
+        </form>
+    </div>
+</header>
+<form action="user-account.html" class="main-form">
+    <label class="main-form__title">Create review</label><br/>
+    <input class="main-form__input" placeholder="Title"><br/>
+    <input class="main-form__input" placeholder="Rate"><br/>
+    <select class="main-form__select">
+        <option>Book</option>
+        <option>Film</option>
+        <option>Game</option>
+    </select><br/>
+    <input class="main-form__input" placeholder="Tag"><br/>
+    <textarea class="main-form__textarea" placeholder="Description"></textarea><br/>
+    <button type="submit" class="main-form__button">Create</button><br/>
+</form>
+</body>
+</html>
