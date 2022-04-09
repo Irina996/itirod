@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="elements-group/elements-group.css">
     <link rel="stylesheet" href="main-content/main-content.css">
     <link rel="stylesheet" href="form/form.css">
+    <link rel="stylesheet" href="heart/heart.css">
+    <link rel="stylesheet" href="character/character.css">
+    <script type="module" src="scripts/index.js"></script>
 </head>
 <body class="body">
 <header class="header">
@@ -37,48 +40,18 @@
 <article class="main-content">
     <aside class="search-panel">
         <label class="search-panel__label">Search</label>
-        <input class="search-panel__input" placeholder="Title"/>
-        <select class="search-panel__select">
+        <input id="search_title" type="text" class="search-panel__input" placeholder="Title"/>
+        <select id="search_group" class="search-panel__select">
+            <option>All</option>
             <option>Book</option>
             <option>Film</option>
             <option>Game</option>
         </select>
-        <input class="search-panel__input" placeholder="Tag"/>
-        <input class="search-panel__input" placeholder="Rate"/>
-        <button class="search-panel__button">Go</button>
+        <input id="search_tag" type="text" class="search-panel__input" placeholder="Tag"/>
+        <input id="search_rate" type="number" min="0" max="5" class="search-panel__input" placeholder="Rate"/>
+        <button id="search_button" class="search-panel__button">Go</button>
     </aside>
-    <article class="review-list">
-        <article class="review">
-            <div class="elements-group">
-                <label class="review__title">ReviewTitle</label>
-                <label class="review__label">Rate</label>
-                <label class="review__label">Group</label>
-                <label class="review__label">Tags</label>
-                <pre class="review__description">This is a description. It’s explain opinion of user about book/film/game.</pre>
-            </div>
-            <img class="review__image" src="image.png" alt="Review Image">
-        </article>
-        <article class="review">
-            <div class="elements-group">
-                <label class="review__title">ReviewTitle</label>
-                <label class="review__label">Rate</label>
-                <label class="review__label">Group</label>
-                <label class="review__label">Tags</label>
-                <pre class="review__description">This is
-            a description. It’s explain opinion of user about book/film/game.</pre>
-            </div>
-            <img class="review__image" src="image.png" alt="Review Image">
-        </article>
-        <article class="review">
-            <div class="elements-group">
-                <label class="review__title">ReviewTitle</label>
-                <label class="review__label">Rate</label>
-                <label class="review__label">Group</label>
-                <label class="review__label">Tags</label>
-                <pre class="review__description">This is a description. It’s explain opinion of user about book/film/game.</pre>
-            </div>
-            <img class="review__image" src="image.png" alt="Review Image">
-        </article>
+    <article id="review_list" class="review-list">
     </article>
 </article>
 </body>

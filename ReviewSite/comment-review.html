@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comment</title>
+    <link href="body/body.css" rel="stylesheet" type="text/css">
+    <link href="header/header.css" rel="stylesheet" type="text/css">
+    <link href="header/__title/header__tittle.css" rel="stylesheet" type="text/css">
+    <link href="header/__button/header__button.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="elements-group/elements-group.css">
+    <link rel="stylesheet" href="main-content/main-content.css">
+    <link rel="stylesheet" href="form/form.css">
+    <link rel="stylesheet" href="comment/comment.css">
+    <link rel="stylesheet" href="comment/__input/comment__input.css">
+    <link rel="stylesheet" href="comment/__button/comment__button.css">
+    <link rel="stylesheet" href="comment/__container/comment__container.css">
+    <link rel="stylesheet" href="footer/footer.css">
+    <script type="module" src="scripts/review/comment-review.js"></script>
+</head>
+<body class="body">
+<header class="header">
+    <label class="header__title">REVIEW CONTROL</label>
+    <div class="elements-group">
+        <form action="user-account.html" class="form">
+            <button type="submit" class="header__button">Your account</button>
+        </form>
+        <form action="logout.html" class="form">
+            <button type="submit" class="header__button">Log out</button>
+        </form>
+    </div>
+</header>
+<article class="comment">
+    <div id="commentContainer" class="comment__container">
+
+    </div>
+    <div class="footer">
+        <input id="comment" class="comment__input" type="text">
+        <span id="send-comment" class="comment__button">&#x27a4;</span>
+    </div>
+</article>
+</body>
+</html>

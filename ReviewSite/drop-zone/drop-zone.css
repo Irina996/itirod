@@ -1,0 +1,13 @@
+.drop-zone {
+    margin: 1rem auto auto;
+    width: 18rem;
+    height: 12rem;
+    border: 0.1rem dashed rgba(0,0,0,.3);
+    font-size: 1.5rem;
+    color: rgba(0,0,0,.5);
+}
+.drop-zone.mouse-over {
+    border: 0.1rem dashed rgba(0,0,0,.5);
+    color: rgba(0,0,0,.7);
+}
+
