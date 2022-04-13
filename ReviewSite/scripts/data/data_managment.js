@@ -13,7 +13,7 @@ function getReviewList(title = "", group = "All", tag = "", rate = ""){
     let review_list = [];
     reviews.forEach(function(item) {
         if (
-            (title === "" || item.title === title)
+            (title === "" || item.title.toLowerCase().indexOf(title.toLowerCase()) > -1)
             && (group === "All" || group === item.review_group)
             && (tag === "" || item.tags.includes(tag))
             && (rate === "" || rate === item.rate)
