@@ -20,7 +20,7 @@ const getUserById = async(id) => {
         let result = {};
         await pool
             .query("SELECT * FROM app_user WHERE id = $1", [id])
-            .then(res => {result = res.rows});
+            .then(res => {result = res.rows[0]});
 
         return result;
     }
@@ -35,7 +35,7 @@ const getUserByEmail = async(email) => {
         let result = {};
         await pool
             .query("SELECT * FROM app_user WHERE email = $1", [email])
-            .then(res => {result = res.rows});
+            .then(res => {result = res.rows[0]});
 
         return result;
     }
@@ -50,7 +50,7 @@ const getUserByName = async(name) => {
         let result = {};
         await pool
             .query("SELECT * FROM app_user WHERE name = $1", [name])
-            .then(res => {result = res.rows});
+            .then(res => {result = res.rows[0]});
 
         return result;
     }
@@ -65,7 +65,7 @@ const findUser = async(email, password) => {
         let result = {};
         await pool
             .query("SELECT * FROM app_user WHERE email = $1 AND password = $2", [email, password])
-            .then(res => {result = res.rows});
+            .then(res => {result = res.rows[0]});
 
         return result;
     }

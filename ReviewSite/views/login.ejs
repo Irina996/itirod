@@ -23,8 +23,13 @@
 </header>
 <form class="main-form" action="/login" method="post">
     <label class="main-form__title">Log in</label><br/>
-    <input id="email" name="email" class="main-form__input" placeholder="email"><br/>
-    <input id="password" name="password" class="main-form__input" placeholder="password"><br/>
+    <label id="error_label" class="main-form__label">
+        <% if (messages.error) { %>
+            <%= messages.error %><br/>
+        <% } %>
+    </label>
+    <input type="email" required name="email" class="main-form__input" placeholder="email"><br/>
+    <input type="password" required name="password" class="main-form__input" placeholder="password"><br/>
     <button id="login" type="submit" class="main-form__button">Login</button><br/>
 </form>
 </body>
