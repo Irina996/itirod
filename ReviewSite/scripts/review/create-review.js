@@ -15,8 +15,7 @@ createBtn.addEventListener("click", async e => {
 
     let imageName = saveImage();
 
-    let user = "user1";     // TODO: change that to real user name after auth adding
-    addNewReview(title, rate, group, tags, description, imageName, user);
+    await addNewReview(title, rate, group, tags, description, imageName);
 });
 
 

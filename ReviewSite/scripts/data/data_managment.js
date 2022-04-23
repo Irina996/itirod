@@ -1,15 +1,14 @@
-import './example_reviews.js'
-
-//TODO: replace by db
-let r = localStorage.getItem("reviews");
-let reviews = JSON.parse(r);
-if (reviews === null)
-{
-    localStorage.setItem("reviews", JSON.stringify(window.reviews));
-    reviews = window.reviews;
+async function iniReviews(){
+    let reviewRequest = await fetch('/get-reviews', {
+        method: "GET",
+        headers: {"content-type": "application/json"},
+    })
+    return await reviewRequest.json();
 }
 
-function getReviewList(title = "", group = "All", tag = "", rate = ""){
+async function getReviewList(title = "", group = "All", tag = "", rate = ""){
+    let reviews = await iniReviews();
+
     let review_list = [];
     reviews.forEach(function(item) {
         if (
@@ -24,7 +23,7 @@ function getReviewList(title = "", group = "All", tag = "", rate = ""){
     return review_list;
 }
 
-function addNewReview(title, rate, group, tags, description, image, user) {
+async function addNewReview(title, rate, group, tags, description, image) {
     let new_review = {
         id: reviews.length,
         title: title,
@@ -33,42 +32,105 @@ function addNewReview(title, rate, group, tags, description, image, user) {
         tags: tags,
         description: description,
         image: image,
-        creator: user,
     }
 
-    reviews.push(new_review);
-    localStorage.setItem("reviews", JSON.stringify(reviews));
+    await fetch('/create-review', {
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify(new_review),
+    })
 }
 
-function editReview(id, title, rate, group, tags, description, image) {
-    reviews[id].title = title;
-    reviews[id].rate = rate;
-    reviews[id].review_group = group;
-    reviews[id].tags = tags;
-    reviews[id].description = description;
+async function editReview(id, title, rate, group, tags, description, image) {
+    let review = await getReview(id)
+    review.title = title;
+    review.rate = rate;
+    review.review_group = group;
+    review.tags = tags;
+    review.description = description;
     if (image !== "")
-        reviews[id].image = image;
+        review.image = image;
 
-    localStorage.setItem("reviews", JSON.stringify(reviews));
+    await fetch('/edit-review', {
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify(review),
+    })
 }
 
-function getReview(id = 0){
-    return reviews[id];
+async function getReview(id = 0){
+    let getReviewRequest = await fetch('/get-review-by-id', {
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify({"id": id}),
+    })
+    return await getReviewRequest.json();
 }
 
-function deleteReview(id = 0){
-    console.log(id);
-    console.log(reviews[id]);
-    reviews.splice(id, 1);
-    localStorage.setItem("reviews", JSON.stringify(reviews));
+async function deleteReview(id = 0){
+    await fetch('/delete-review', {
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify({"id": id}),
+    })
 }
 
-function likeReview(review_id, user) {
-    // TODO: set that user liked review
+async function likeReview(review_id) {
+    await fetch('/like-review', {
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify({"id": review_id}),
+    })
 }
 
-function commentReview(review_id, user, text) {
-    //TODO: set that user commented review
+async function isLiked(review_id) {
+    let req = await fetch('/is-review-liked', {
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify({"id": review_id}),
+    })
+    return await req.json();
 }
 
-export {getReviewList, addNewReview, editReview, getReview, deleteReview, likeReview, commentReview};
+async function commentReview(review_id, text) {
+    let req = await fetch('/comment-review', {
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify({"id": review_id, "text": text}),
+    })
+}
+
+async function getComments(review_id) {
+    let req = await fetch('/get-comments', {
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify({"id": review_id}),
+    })
+    let comments = await req.json();
+    console.log('comments in data management', comments);
+    return comments;
+}
+
+async function isCreator(review_id) {
+    let req = await fetch('/is-creator', {
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify({"id": review_id}),
+    })
+    let result = await req.json();
+    console.log('isCreators in data management', result);
+    return result;
+}
+
+
+export {
+    getReviewList,
+    addNewReview,
+    editReview,
+    getReview,
+    deleteReview,
+    likeReview,
+    isLiked,
+    commentReview,
+    getComments,
+};

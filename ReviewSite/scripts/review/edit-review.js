@@ -1,8 +1,8 @@
 import {editReview, getReview} from "../data/data_managment.js";
 
 let id = localStorage.getItem("reviewId");
-window.addEventListener('load', () => {
-    let review = getReview(id);
+window.addEventListener('load', async () => {
+    let review = await getReview(id);
     document.getElementById("title").value = review.title;
     document.getElementById("rate").value = review.rate;
     document.getElementById("group").value = review.review_group;
@@ -17,7 +17,7 @@ window.addEventListener('load', () => {
 });
 
 let editBtn = document.getElementById("edit_review");
-editBtn.addEventListener("click", async e => {
+editBtn.addEventListener("click", async () => {
     let {title, rate, group, description, tags} = getStrReviewInfo();
 
     if (!isDataValid(title, rate, group, description, tags))
@@ -29,5 +29,6 @@ editBtn.addEventListener("click", async e => {
     else
         imageName = saveImage();
 
-    editReview(id, title, rate, group, tags, description, imageName);
+    await editReview(id, title, rate, group, tags, description, imageName);
+    window.location.href = "/user-account";
 });

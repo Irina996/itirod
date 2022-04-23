@@ -30,27 +30,3 @@ function initialize(passport, getUserByEmail, getUserById) {
 }
 
 module.exports = initialize
-/*
-
-passport.use(
-    'local',
-    new localStrategy(async (user, password, done) => {
-        console.log('jkljkljkljkl');
-        let query_result = await db.findUser(user, password)
-        if (query_result.length === 0) {
-            return done(null, false, {
-                message: 'Wrong login or password',
-            })
-        }/!*
-        if (user !== 'test_user')
-            return done(null, false, {
-                message: 'User not found',
-            })
-        else if (password !== 'test_password')
-            return done(null, false, {
-                message: 'Wrong password',
-            })*!/
-
-        return done(null, { id: 1, name: 'Test', age: 21 })
-    })
-)*/

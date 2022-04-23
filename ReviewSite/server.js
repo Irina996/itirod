@@ -7,6 +7,7 @@ const express = require('express'),
     bcrypt = require('bcrypt'),
     app = express();
 const db = require('./app-modules/node-postgres/queries');
+const review_queries = require('./app-modules/node-postgres/review_queries')
 const initializePassport = require('./scripts/configs/passport-config')
 initializePassport(
     passport,
@@ -45,7 +46,7 @@ app.get('/login', checkNotAuthenticated, (req, res) => {
 })
 
 app.post('/login', passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/home',
     failureRedirect: '/login',
     failureFlash: true
 }))
@@ -69,9 +70,22 @@ app.post('/logout', (req, res) => {
     res.redirect('/login')
 })
 
-app.post('/get-user-info', checkAuthenticated, (req, res) => {
-    console.log('username', req.user.name);
-    res.send({username: req.user.name})
+app.get('/user-account', checkAuthenticated, async (req, res) => {
+    const user = await req.user;
+    res.render('user-account.ejs', { name: user.name })
+})
+
+app.get('/edit-review', checkAuthenticated, (req ,res) => {
+    res.sendFile(path.join(__dirname, 'edit-review.html'));
+})
+
+app.get('/comment-review', checkAuthenticated, async(req, res) => {
+    res.sendFile(path.join(__dirname, 'comment-review.html'));
+})
+
+app.post('/get-user-id', checkAuthenticated, (req, res) => {
+    console.log('user id on server', req.user.id);
+    res.send({userid: req.user.id})
 })
 
 app.post("/save-image", (req, res) => {
@@ -96,6 +110,86 @@ app.post("/save-image", (req, res) => {
     })
 })
 
+app.get('/get-reviews', checkAuthenticated, async (req, res) => {
+    let reviews = await review_queries.getReviews();
+    res.send(JSON.stringify(reviews));
+})
+
+app.post('/get-review-by-id', async(req, res) => {
+    const id = req.body.id;
+    let review = await review_queries.getReviewById(id);
+    res.send(JSON.stringify(review));
+})
+
+app.post('/create-review', async (req, res) => {
+    let user = await req.user;
+    let userId = user.id;
+    const new_review = req.body;
+    new_review.creator = userId;
+    let r = await review_queries.createReview(new_review);
+    if (r === true)
+        res.sendStatus(200);
+    else
+        res.sendStatus(500);
+})
+
+app.post('/edit-review', async (req, res) => {
+    const review = req.body;
+    let r = await review_queries.editReview(review);
+    if (r === true)
+        res.sendStatus(200);
+    else
+        res.sendStatus(500);
+})
+
+app.post("/delete-review", async (req, res) => {
+    const id = req.body.id;
+    let result = await review_queries.deleteReview(id);
+    if (!result)
+        res.sendStatus(500);
+    res.sendStatus(200);
+})
+
+app.post('/like-review', async (req, res) => {
+    let reviewId = req.body.id;
+    let user = await req.user;
+    let userId = user.id;
+    let result = await review_queries.likeReview(reviewId, userId);
+})
+app.post('/is-review-liked', async (req, res) => {
+    let reviewId = req.body.id;
+    let user = await req.user;
+    let userId = user.id;
+    let result = await review_queries.isReviewLiked(reviewId, userId);
+    res.send(result);
+})
+
+app.post('/comment-review', async(req, res) => {
+    let reviewId = req.body.id;
+    let text = req.body.text;
+    console.log('text', text);
+    let user = await req.user;
+    let userId = user.id;
+    let result = await review_queries.commentReview(reviewId, userId, text);
+    console.log('inserted comment', result)
+    res.send(result);
+})
+
+app.post('/get-comments', async(req, res) => {
+    let reviewId = req.body.id;
+    let result = await review_queries.getComments(reviewId);
+    console.log('comments', result)
+    res.send(result);
+})
+
+app.post('/is-creator', async(req, res) => {
+    let reviewId = req.body.id;
+    let user = await req.user;
+    let userId = user.id;
+    let result = await review_queries.isCreator(userId, reviewId);
+    console.log('is creator ', result)
+    res.send(result);
+})
 
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
