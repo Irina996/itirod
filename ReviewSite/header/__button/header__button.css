@@ -1,0 +1,15 @@
+.header__button {
+    background-color: #1492AE;
+    border-width: 0;
+    font-size: 1.5rem;
+    margin-top: 1.3rem;
+}
+.header__button:focus {
+    background-color: #1d5f70;
+    color: white;
+    outline: none;
+    border: 0.1rem solid black;
+}
+.header__button:active {
+    transform: scale(1.1, 1.1);
+}

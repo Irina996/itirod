@@ -1,0 +1,7 @@
+.review {
+    border: 0.01rem solid black;
+    margin: 0.7rem;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+}

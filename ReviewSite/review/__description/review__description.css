@@ -1,0 +1,7 @@
+.review__description {
+    margin: 0.7rem;
+    max-width: 100%;
+    min-width: 10rem;
+    white-space: normal;
+    overflow: auto;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ReviewControl</title>
+    <link href="body/body.css" rel="stylesheet" type="text/css">
+    <link href="header/header.css" rel="stylesheet" type="text/css">
+    <link href="header/__title/header__tittle.css" rel="stylesheet" type="text/css">
+    <link href="header/__button/header__button.css" rel="stylesheet" type="text/css">
+    <link href="search-panel/search-panel.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="search-panel/__label/search-panel__label.css">
+    <link rel="stylesheet" href="search-panel/__input/search-panel__input.css">
+    <link rel="stylesheet" href="search-panel/__select/search-panel__select.css">
+    <link rel="stylesheet" href="search-panel/__button/search-panel__button.css">
+    <link rel="stylesheet" href="review/review.css">
+    <link rel="stylesheet" href="review/__title/review__title.css">
+    <link rel="stylesheet" href="review/__label/review__label.css">
+    <link rel="stylesheet" href="review-list/review-list.css">
+    <link rel="stylesheet" href="review/__description/review__description.css">
+    <link rel="stylesheet" href="review/__image/review__image.css">
+    <link rel="stylesheet" href="elements-group/elements-group.css">
+    <link rel="stylesheet" href="main-content/main-content.css">
+    <link rel="stylesheet" href="form/form.css">
+    <link rel="stylesheet" href="heart/heart.css">
+    <link rel="stylesheet" href="character/character.css">
+    <script type="module" src="scripts/index.js"></script>
+</head>
+<body class="body">
+<header class="header">
+    <label class="header__title">REVIEW CONTROL</label>
+    <div class="elements-group">
+        <form action="user-account.html" class="form">
+            <button type="submit" class="header__button">Your account</button>
+        </form>
+        <form action="logout.html" class="form">
+            <button type="submit" class="header__button">Log out</button>
+        </form>
+    </div>
+</header>
+<article class="main-content">
+    <aside class="search-panel">
+        <label class="search-panel__label">Search</label>
+        <input id="search_title" type="text" class="search-panel__input" placeholder="Title"/>
+        <select id="search_group" class="search-panel__select">
+            <option>All</option>
+            <option>Book</option>
+            <option>Film</option>
+            <option>Game</option>
+        </select>
+        <input id="search_tag" type="text" class="search-panel__input" placeholder="Tag"/>
+        <input id="search_rate" type="number" min="0" max="5" class="search-panel__input" placeholder="Rate"/>
+        <button id="search_button" class="search-panel__button">Go</button>
+    </aside>
+    <article id="review_list" class="review-list">
+    </article>
+</article>
+</body>
+</html>

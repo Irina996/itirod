@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create review</title>
+    <link href="body/body.css" rel="stylesheet" type="text/css">
+    <link href="header/header.css" rel="stylesheet" type="text/css">
+    <link href="header/__title/header__tittle.css" rel="stylesheet" type="text/css">
+    <link href="header/__button/header__button.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="main-form/main-form.css">
+    <link rel="stylesheet" href="main-form/__button/main-form__button.css">
+    <link rel="stylesheet" href="main-form/__input/main-form__input.css">
+    <link rel="stylesheet" href="main-form/__select/main-form__select.css">
+    <link rel="stylesheet" href="main-form/__textarea/main-form__textarea.css">
+    <link rel="stylesheet" href="main-form/__title/main-form__title.css">
+    <link rel="stylesheet" href="main-form/__image/main-form__image.css">
+    <link rel="stylesheet" href="form/form.css">
+    <link rel="stylesheet" href="drop-zone/drop-zone.css">
+    <link rel="stylesheet" href="drop-zone/__button/drop-zone__button.css">
+    <link rel="stylesheet" href="drop-zone/__input/drop-zone__input.css">
+    <script src="scripts/review/process_review.js"></script>
+    <script type="module" src="scripts/review/create-review.js"></script>
+    <script src="scripts/tag_input/tag.js"></script>
+    <script type="module" src="scripts/img_input/img_input.js"></script>
+</head>
+<body class="body">
+<header class="header">
+    <label class="header__title">REVIEW CONTROL</label>
+    <div class="elements-group">
+        <form action="user-account.html" class="form">
+            <button type="submit" class="header__button">Your account</button>
+        </form>
+        <form action="logout.html" class="form">
+            <button type="submit" class="header__button">Log out</button>
+        </form>
+    </div>
+</header>
+<form action="user-account.html" class="main-form">
+    <label class="main-form__title">Create review</label><br/>
+    <input id="title" type="text" required class="main-form__input" placeholder="Title"><br/>
+    <input id="rate" type="number" required min="0" max="5" class="main-form__input" placeholder="Rate"><br/>
+    <select id="group" class="main-form__select">
+        <option>Book</option>
+        <option>Film</option>
+        <option>Game</option>
+    </select><br/>
+    <div id="tagsContainer">
+        <!--<input id="Tag[1]" type="text" required
+               onchange="addTagField()" class="main-form__input" placeholder="Tag">-->
+    </div>
+    <textarea id="description" required class="main-form__textarea" placeholder="Description"></textarea><br/>
+    <div id="drop-zone" class="drop-zone">
+        Drop image here...
+        <div id="drop-zone_button" class="drop-zone__button">
+            or click here...
+            <input id="image" class="drop-zone__input" type="file" accept=".jpg, .png" required/>
+        </div>
+    </div>
+    <br/>
+    <img id="image_preview" class="main-form__image" src="images/image.png"><br/>
+    <button id="create_review" type="submit" class="main-form__button">Create</button><br/>
+</form>
+</body>
+</html>

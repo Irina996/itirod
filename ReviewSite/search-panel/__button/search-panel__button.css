@@ -1,0 +1,15 @@
+.search-panel__button {
+    border: 0.01rem solid black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #1492AE;
+    width: 4rem;
+    font-size: 1.5rem;
+}
+.search-panel__button:focus {
+    background-color: #53a4bb;
+    outline: none;
+}
+.search-panel__button:active {
+    transform: scale(0.9, 0.9);
+}

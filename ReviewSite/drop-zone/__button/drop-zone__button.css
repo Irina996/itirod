@@ -1,0 +1,13 @@
+.drop-zone__button {
+    margin: auto;
+    cursor: pointer;
+    line-height: 1.5rem;
+    color: rgba(0,0,0,.5);
+    font-size: 0.9rem;
+    width: 6rem;
+    height: 1.6rem;
+    background-color: #1492AE;
+}
+.drop-zone__button:hover {
+    background-color: #53a4bb;
+}
