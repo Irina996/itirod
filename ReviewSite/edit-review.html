@@ -28,7 +28,7 @@
 <header class="header">
     <label class="header__title">REVIEW CONTROL</label>
     <div class="elements-group">
-        <form action="user-account.html" class="form">
+        <form action="/user-account" method="get" class="form">
             <button type="submit" class="header__button">Your account</button>
         </form>
         <form action="logout.html" class="form">
@@ -36,7 +36,7 @@
         </form>
     </div>
 </header>
-<form action="user-account.html" class="main-form">
+<form class="main-form">
     <label class="main-form__title">Edit review</label><br/>
     <label class="main-form__label">Title:</label>
     <input id="title" type="text" required class="main-form__input"><br/>
@@ -63,7 +63,7 @@
     </div>
     <br/>
     <img id="image_preview" class="main-form__image" src="images/image.png"><br/>
-    <button id="edit_review" type="submit" class="main-form__button">Edit</button><br/>
+    <button id="edit_review" type="button" class="main-form__button">Edit</button><br/>
 </form>
 </body>
 </html>

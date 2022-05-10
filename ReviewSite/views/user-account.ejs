@@ -2,30 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>User account</title>
     <link href="body/body.css" rel="stylesheet" type="text/css">
     <link href="header/header.css" rel="stylesheet" type="text/css">
     <link href="header/__title/header__tittle.css" rel="stylesheet" type="text/css">
     <link href="header/__button/header__button.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="main-form/main-form.css">
-    <link rel="stylesheet" href="main-form/__input/main-form__input.css">
     <link rel="stylesheet" href="main-form/__title/main-form__title.css">
     <link rel="stylesheet" href="main-form/__button/main-form__button.css">
+    <link rel="stylesheet" href="form/form.css">
 </head>
 <body class="body">
 <header class="header">
     <label class="header__title">REVIEW CONTROL</label>
     <div class="elements-group">
-        <form action="registration.html">
-            <button type="submit" class="header__button">Register</button>
+        <form action="/home" method="get" class="form">
+            <button type="submit" class="header__button">Home</button>
+        </form>
+        <form action="logout.html" class="form">
+            <button type="submit" class="header__button">Log out</button>
         </form>
     </div>
 </header>
-<form class="main-form" action="index.html">
-    <label class="main-form__title">Log in</label><br/>
-    <input class="main-form__input" placeholder="username"><br/>
-    <input class="main-form__input" placeholder="password"><br/>
-    <button type="submit" class="main-form__button">Login</button><br/>
+<form action="create-review.html" class="main-form">
+    <label class="main-form__title">Username: <%= name %></label><br/>
+    <button type="submit" class="main-form__button">Create review</button>
 </form>
 </body>
 </html>

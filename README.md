@@ -1,5 +1,5 @@
 Климович Ирина 953504<br/>
-Link: https://recom-control-site.herokuapp.com/<br/>
+Link: http://recom-control.eu-4.evennode.com/login<br/>
 
 # Description 
 This is a review management app.<br/>

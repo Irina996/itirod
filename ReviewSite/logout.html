@@ -17,20 +17,20 @@
 <header class="header">
     <label class="header__title">REVIEW CONTROL</label>
     <div class="elements-group">
-        <form action="index.html" class="form">
+        <form action="/home" method="get" class="form">
             <button type="submit" class="header__button">Home</button>
         </form>
-        <form action="user-account.html" class="form">
+        <form action="/user-account" method="get" class="form">
             <button type="submit" class="header__button">Your account</button>
         </form>
     </div>
 </header>
 <article class="main-form">
     <label class="main-form__title">Are you sure you want to log out?</label><br/>
-    <form action="index.html" class="form">
+    <form action="/home" method="get" class="form">
         <button type="submit" class="main-form__button">No</button>
     </form>
-    <form action="login.html" class="form">
+    <form action="/logout" method="post" class="form">
         <button type="submit" class="main-form__button">Yes</button>
     </form>
 </article>

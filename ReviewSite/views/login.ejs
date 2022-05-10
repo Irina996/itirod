@@ -2,31 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User account</title>
+    <title>Login</title>
     <link href="body/body.css" rel="stylesheet" type="text/css">
     <link href="header/header.css" rel="stylesheet" type="text/css">
     <link href="header/__title/header__tittle.css" rel="stylesheet" type="text/css">
     <link href="header/__button/header__button.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="main-form/main-form.css">
+    <link rel="stylesheet" href="main-form/__input/main-form__input.css">
     <link rel="stylesheet" href="main-form/__title/main-form__title.css">
     <link rel="stylesheet" href="main-form/__button/main-form__button.css">
-    <link rel="stylesheet" href="form/form.css">
 </head>
 <body class="body">
 <header class="header">
     <label class="header__title">REVIEW CONTROL</label>
     <div class="elements-group">
-        <form action="index.html" class="form">
-            <button type="submit" class="header__button">Home</button>
-        </form>
-        <form action="logout.html" class="form">
-            <button type="submit" class="header__button">Log out</button>
+        <form action="/register" method="get">
+            <button type="submit" class="header__button">Register</button>
         </form>
     </div>
 </header>
-<form action="create-review.html" class="main-form">
-    <label class="main-form__title">Username: user1</label><br/>
-    <button type="submit" class="main-form__button">Create review</button>
+<form class="main-form" action="/login" method="post">
+    <label class="main-form__title">Log in</label><br/>
+    <label id="error_label" class="main-form__label">
+        <% if (messages.error) { %>
+            <%= messages.error %><br/>
+        <% } %>
+    </label>
+    <input type="email" required name="email" class="main-form__input" placeholder="email"><br/>
+    <input type="password" required name="password" class="main-form__input" placeholder="password"><br/>
+    <button id="login" type="submit" class="main-form__button">Login</button><br/>
 </form>
 </body>
 </html>
