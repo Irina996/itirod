@@ -32,8 +32,6 @@ async function addNewReview(title, rate, group, tags, description, image) {
         description: description,
         image: image,
     }
-
-    console.log('data add new review');
     
     await fetch('/create-review', {
         method: "POST",
@@ -108,7 +106,6 @@ async function getComments(review_id) {
         body: JSON.stringify({"id": review_id}),
     })
     let comments = await req.json();
-    console.log('comments in data management', comments);
     return comments;
 }
 
@@ -119,7 +116,6 @@ async function isCreator(review_id) {
         body: JSON.stringify({"id": review_id}),
     })
     let result = await req.json();
-    console.log('isCreators in data management', result);
     return result;
 }
 

@@ -20,7 +20,7 @@ export default class extends AbstractView {
                 </button>
             </div>
         </header>
-        <article class="main-content">
+        <article id="main_content" class="main-content">
             <aside class="search-panel">
                 <label class="search-panel__label">Search</label>
                 <input id="search_title" type="text" class="search-panel__input" placeholder="Title"/>
@@ -34,8 +34,7 @@ export default class extends AbstractView {
                 <input id="search_rate" type="number" min="0" max="5" class="search-panel__input" placeholder="Rate"/>
                 <button id="search_button" class="search-panel__button">Go</button>
             </aside>
-            <article id="review_list" class="review-list">
-            </article>
+            
         </article>
         `;
     }
