@@ -1,11 +1,10 @@
+import { get_username } from "./api_service.js";
+
 export async function loadUserAccountPage(navigateTo) {
     let user = document.getElementById("username")
-    let req = await fetch('/get-username', {
-        method: "POST",
-    });
-    let res = await req.json();
+    let username = await get_username();
 
-    user.innerHTML = "Username: " + res.name;
+    user.innerHTML = "Username: " + username;
 
     document.getElementById("create-review").addEventListener("click", () => {
         navigateTo('/create-review')

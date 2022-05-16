@@ -7,7 +7,7 @@ import EditReview from "./views/EditReview.js";
 import UserAccount from "./views/UserAccount.js";
 import CreateReview from "./views/CreateReview.js";
 import CommentReview from "./views/CommentReview.js";
-import { checkAuthenticated } from "./scripts/check_authenticated.js";
+import { checkAuthenticated } from "./scripts/api_service.js";
 
 
 

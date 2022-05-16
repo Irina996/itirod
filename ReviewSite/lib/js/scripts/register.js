@@ -1,6 +1,11 @@
+import { register } from "./api_service.js";
+
 export async function loadRegisterPage(navigateTo) {
     document.getElementById("register").addEventListener("click", async () => {
-        let isRegistered = await register();
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let isRegistered = await register(username, email, password);
         if (isRegistered) {
             navigateTo('/login');
         }
@@ -8,32 +13,4 @@ export async function loadRegisterPage(navigateTo) {
             navigateTo('/register');
         }
     })
-}
-
-async function register(){
-    let username = document.getElementById("username").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    let user = {
-        username: username,
-        email: email,
-        password: password
-    }
-
-    let register = await fetch('/register', {
-        method: "POST",
-        body: new URLSearchParams(user),
-    });
-
-    if (register.status === 401) {
-        return false;
-    }
-    else if (register.status === 200) {
-        return true;
-    }
-    else {
-        // some error
-        console.log(register.statusText)
-        return false;
-    }
 }

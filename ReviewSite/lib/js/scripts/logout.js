@@ -1,3 +1,5 @@
+import { logout } from "./api_service.js";
+
 export async function loadLogoutPage(navigateTo) {
     document.getElementById("home").addEventListener("click", async () => {
         navigateTo('/home')
@@ -7,11 +9,4 @@ export async function loadLogoutPage(navigateTo) {
         await logout();
         navigateTo('/login');
     }) 
-}
-
-export async function logout(){
-    let logout = await fetch('/logout', {
-        method: "POST",
-        headers: {"content-type": "application/json"},
-    });
 }
