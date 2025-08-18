@@ -1,6 +1,3 @@
-Климович Ирина 953504<br/>
-Link: http://recom-control.eu-4.evennode.com/login<br/>
-
 # Description 
 This is a review management app.<br/>
 Share your impressions about a book, movie or game. See other people's reviews. Find a new perspective on your favorite topics.<br/>
